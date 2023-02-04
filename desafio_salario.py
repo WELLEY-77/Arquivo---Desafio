@@ -6,4 +6,15 @@ while True:
     [ 0 ] - SAIR
     ''')
     opcao = int(input('Qual a opção desejada? '))
-    break
+    
+    if opcao == 1:
+        nome = str(input('Digite um nome: '))
+        salario = float(input('Digite um salario: '))
+        
+        with open('nome_salario.txt', 'a', encoding = 'utf8') as meu_arquivo:
+            meu_arquivo.write(nome+':'+str(salario)+'\n')
+
+    elif opcao == 0:
+        break
+    else:
+        print('Opção invalida! ')
