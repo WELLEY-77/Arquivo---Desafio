@@ -9,7 +9,7 @@ while True:
     
     if opcao == 1:
         nome = str(input('Digite um nome: '))
-        salario = float(input('Digite um salario: '))
+        salario = round(float(input('Digite um salario: ')))
         
         with open('nome_salario.txt', 'a', encoding = 'utf8') as meu_arquivo:
 
@@ -21,6 +21,10 @@ while True:
                 meu_arquivo.write(nome+':'+str(salario)+'\n')
 
     elif opcao == 0:
+        with open('nome_salario.txt', 'r', encoding = 'utf8') as meu_arquivo:
+            arquivo = meu_arquivo.readlines()
+            for linha in arquivo:
+                print(linha)
         break
     else:
         print('Opção invalida! ')
