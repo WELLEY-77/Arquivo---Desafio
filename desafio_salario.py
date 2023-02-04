@@ -12,7 +12,13 @@ while True:
         salario = float(input('Digite um salario: '))
         
         with open('nome_salario.txt', 'a', encoding = 'utf8') as meu_arquivo:
-            meu_arquivo.write(nome+':'+str(salario)+'\n')
+
+            if salario > 1500:
+                desconto = 0.06
+                salario_desconto = salario - desconto
+                meu_arquivo.write(nome+':'+str(salario_desconto)+'\n')
+            else:
+                meu_arquivo.write(nome+':'+str(salario)+'\n')
 
     elif opcao == 0:
         break
